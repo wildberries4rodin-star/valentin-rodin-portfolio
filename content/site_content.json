@@ -1,0 +1,248 @@
+{
+  "site": {
+    "name": "Valentin Rodin Portfolio",
+    "owner": "Valentin Rodin",
+    "positioning_primary": "International Actor Working Across Asia",
+    "positioning_secondary": [
+      "Model",
+      "On-Camera Talent",
+      "Spokesperson",
+      "Professional Product Reviewer",
+      "Content Creator"
+    ],
+    "base": "Seoul, South Korea",
+    "visa": "E6 visa holder",
+    "languages": [
+      "Fluent English",
+      "Native Russian"
+    ],
+    "contact": {
+      "email": "wildberries4rodin@gmail.com",
+      "phone_korea": "010-5890-3137",
+      "kakaotalk_id": "ValentinRodin",
+      "instagram_url": "https://instagram.com/rodin_inbiz"
+    },
+    "social": {
+      "instagram_handle": "@Rodin_inbiz",
+      "instagram_url": "https://instagram.com/rodin_inbiz",
+      "youtube_handle": "@MidnightCowboy1983",
+      "youtube_url": "https://www.youtube.com/@MidnightCowboy1983"
+    },
+    "materials": {
+      "imdb_url": "https://m.imdb.com/name/nm14122028/?ref_=ext_shr_lnk",
+      "intro_video_url": "https://drive.google.com/file/d/1vVPFtgLrv9XdyDO8y-CeMASqIb4vTR9A/view?usp=drivesdk",
+      "portfolio_pdf_url": "https://drive.google.com/file/d/1Rqvt3k1dGl0XO8rmwCWKOtwxWgK44jW-/view?usp=drive_link"
+    },
+    "seo": {
+      "title": "Valentin Rodin | International Actor in Asia",
+      "description": "International actor, model, and on-camera talent based in Seoul. Screen credits across Korea, China, Thailand, India, and Russia."
+    }
+  },
+  "profile": {
+    "display_name": "Valentin Rodin",
+    "full_name": "Valentin Rodin (Volobuev)",
+    "birth_date": "1983.01.16",
+    "nationality": "Russian",
+    "base": "Seoul, South Korea",
+    "visa": "E6 visa holder",
+    "languages": [
+      "English",
+      "Russian",
+      "Korean (basic)"
+    ],
+    "height_cm": 182,
+    "weight_kg": 75,
+    "chest_cm": 105,
+    "waist_cm": 80,
+    "hips_cm": 95,
+    "shirt_size": "M",
+    "pants_size": "100-105 (M)",
+    "shoes": "42.5 (255-265mm)",
+    "hair": "Black",
+    "eyes": "Blue",
+    "tattoo": "Arm (right)"
+  },
+  "credits": [
+    {
+      "year": "2025-",
+      "title": "Would You Marry Me in Space",
+      "market": "South Korea",
+      "format": "SBS drama",
+      "role": "Cast",
+      "note": "Current screen credit"
+    },
+    {
+      "year": "2024-2025",
+      "title": "The Next Prince",
+      "market": "Thailand",
+      "format": "Drama series",
+      "role": "Cast",
+      "note": "Thai series credit"
+    },
+    {
+      "year": "2022-2023",
+      "title": "The Wandering Earth",
+      "market": "China",
+      "format": "Sci-fi blockbuster film",
+      "role": "Astronaut Makarov",
+      "note": "Dialogue scenes with Jacky Wu"
+    },
+    {
+      "year": "2021",
+      "title": "Commando 3",
+      "market": "India",
+      "format": "Bollywood action film",
+      "role": "Police officer",
+      "note": "Delhi shoot with dialogue scenes"
+    },
+    {
+      "year": "2015",
+      "title": "Moscow 24 Federal Channel",
+      "market": "Russia",
+      "format": "TV / news internship",
+      "role": "TV host / intern",
+      "note": "Hosting-related experience"
+    },
+    {
+      "year": "2014",
+      "title": "Dom 2",
+      "market": "Russia",
+      "format": "Reality show",
+      "role": "Cast",
+      "note": "National broadcast exposure"
+    }
+  ],
+  "training": [
+    {
+      "category": "Acting",
+      "title": "Moscow School of Cinema and Television",
+      "detail": "1-year acting program"
+    },
+    {
+      "category": "Hosting",
+      "title": "Moscow School of Cinema and Television",
+      "detail": "1-year TV hosting program"
+    },
+    {
+      "category": "On-set",
+      "title": "The Wandering Earth",
+      "detail": "Intensive acting training under the main director's assistant during production"
+    },
+    {
+      "category": "Physical",
+      "title": "Performance skills",
+      "detail": "Boxing, martial arts, stage combat, swimming"
+    }
+  ],
+  "special_skills": [
+    "Drama and action performance",
+    "Boxing",
+    "Martial arts",
+    "Stage combat",
+    "Swimming",
+    "TV hosting",
+    "Bilingual English / Russian delivery",
+    "Travel and personal-development content creation"
+  ],
+  "homepage": {
+    "hero": {
+      "eyebrow": "Seoul-based international screen presence",
+      "title": "Valentin Rodin",
+      "subtitle": "International actor, model, and on-camera talent for film, premium commercials, branded storytelling, and spokesperson work across Asia.",
+      "cta_primary": "Watch Intro Video",
+      "cta_secondary": "Open Portfolio PDF",
+      "cta_tertiary": "Contact"
+    },
+    "positioning": {
+      "headline": "Mature male international talent with cinematic presence and commercial precision.",
+      "body": "Built for premium foreigner roles, strong supporting characters, commercial leads, spokesperson work, and contemporary screen archetypes."
+    },
+    "structure": {
+      "source_of_truth": "PDF portfolio first, website-optimized second",
+      "must_include_sections": [
+        "profile and physical details",
+        "key acting credits",
+        "presentation video",
+        "gallery / lookbook",
+        "training and special skills",
+        "featured YouTube episodes",
+        "materials and contact"
+      ]
+    },
+    "intro_video": {
+      "headline": "Presentation Video",
+      "body": "A dedicated embedded video block must be present on the site for Valentin's personal presentation.",
+      "placement_preference": "directly below hero",
+      "primary_source": "site.materials.intro_video_url"
+    },
+    "lookbook": {
+      "headline": "Lookbook Direction",
+      "body": "The homepage should feel like a premium actor portfolio rather than a copied PDF. Strong stills and selected acting/editorial images will be imported into this section next."
+    },
+    "archetypes": [
+      {
+        "key": "detective",
+        "title": "Detective",
+        "summary": "Controlled intensity, intelligence, and quiet authority."
+      },
+      {
+        "key": "romantic",
+        "title": "Romantic",
+        "summary": "Warmth, emotional openness, and grounded intimacy."
+      },
+      {
+        "key": "bond",
+        "title": "Business / Bond",
+        "summary": "Refined confidence, elegance, and strategic charisma."
+      },
+      {
+        "key": "lover",
+        "title": "Lover",
+        "summary": "Magnetism, vulnerability, and mature masculine softness."
+      },
+      {
+        "key": "macho",
+        "title": "Macho",
+        "summary": "Force, dominance, danger, and screen-commanding edge."
+      },
+      {
+        "key": "sportsman",
+        "title": "Sportsman",
+        "summary": "Athletic confidence, discipline, and active physical presence."
+      }
+    ],
+    "materials": {
+      "headline": "Materials",
+      "body": "All essential materials are available immediately for casting review."
+    },
+    "youtube": {
+      "headline": "YouTube Episodes",
+      "body": "The site should include a curated block of selected YouTube episodes plus a direct link to the full channel.",
+      "channel_handle": "@MidnightCowboy1983",
+      "channel_url": "https://www.youtube.com/@MidnightCowboy1983",
+      "display_mode": "featured episodes + channel link",
+      "featured_episodes": []
+    },
+    "contact": {
+      "headline": "Let’s connect",
+      "body": "Available for film, series, commercials, branded content, spokesperson, and on-camera work across South Korea and wider Asia."
+    }
+  },
+  "editorial": {
+    "mode": "actor-first with commercial strength",
+    "visual_direction": [
+      "cinematic",
+      "premium",
+      "international",
+      "clean but bold",
+      "mobile-readable"
+    ],
+    "avoid": [
+      "generic actor template",
+      "bland corporate layout",
+      "overcrowded one-page clutter",
+      "weak typography",
+      "copy-pasted PDF feeling"
+    ]
+  }
+}

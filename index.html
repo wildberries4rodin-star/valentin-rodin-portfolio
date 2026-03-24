@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALENTIN RODIN — Actor · Model · Content Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&family=Noto+Sans+JP:wght@300;400&family=Noto+Sans+SC:wght@300;400&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f3ef;
+      --cream: #ede9e0;
+      --gold: #c9a84c;
+      --gold-light: #e8d5a0;
+      --grey: #888;
+      --grey-light: #ccc;
+      --section-gap: 120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    body[data-lang="ja"] {
+      font-family: "Noto Sans JP", "Montserrat", sans-serif;
+    }
+
+    body[data-lang="zh"] {
+      font-family: "Noto Sans SC", "Montserrat", sans-serif;
+    }
+
+    body[data-lang="ko"] {
+      font-family: "Noto Sans KR", "Montserrat", sans-serif;
+    }
+
+    .lang-switcher {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 220;
+      display: flex;
+      align-items: stretch;
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      border-left: 1px solid rgba(201, 168, 76, 0.2);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .lang-btn {
+      padding: 12px 16px 11px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.2px;
+      color: var(--grey);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: "Montserrat", sans-serif;
+      min-width: 78px;
+      text-align: center;
+      line-height: 1.15;
+    }
+
+    .lang-btn:last-child {
+      border-right: none;
+    }
+
+    .lang-btn .flag {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 5px;
+      opacity: 0.95;
+    }
+
+    .lang-btn .label {
+      display: block;
+    }
+
+    .lang-btn:hover {
+      color: var(--gold-light);
+      background: rgba(201, 168, 76, 0.06);
+    }
+
+    .lang-btn.active {
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px 72px 0;
+      background: none;
+      backdrop-filter: none;
+      pointer-events: none;
+    }
+
+    .nav-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-decoration: none;
+      margin-top: 4px;
+      text-shadow: 0 0 28px rgba(201, 168, 76, 0.1);
+      pointer-events: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      margin-top: 10px;
+      margin-right: 276px;
+      pointer-events: auto;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(245, 243, 239, 0.76);
+      text-decoration: none;
+      transition: color 0.3s;
+      text-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      height: 100vh;
+      min-height: 920px;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: #060606;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(201, 168, 76, 0.14), transparent 28%),
+        linear-gradient(90deg, #070707 0%, #080808 43%, #0f1013 68%, #101216 100%);
+    }
+
+    .hero-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: min(58vw, 1040px);
+      object-fit: cover;
+      object-position: 58% center;
+      filter: brightness(0.8) contrast(1.08) saturate(0.92);
+      box-shadow: -90px 0 120px rgba(0, 0, 0, 0.75);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6, 6, 6, 1) 0%, rgba(6, 6, 6, 0.98) 31%, rgba(6, 6, 6, 0.93) 42%, rgba(6, 6, 6, 0.62) 55%, rgba(6, 6, 6, 0.18) 70%, rgba(6, 6, 6, 0.02) 100%),
+        linear-gradient(to top, rgba(6, 6, 6, 0.75) 0%, rgba(6, 6, 6, 0.12) 34%, transparent 60%),
+        radial-gradient(circle at 79% 14%, rgba(224, 90, 255, 0.18), transparent 12%),
+        radial-gradient(circle at 67% 42%, rgba(44, 199, 214, 0.12), transparent 18%);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 72px;
+      bottom: 120px;
+      z-index: 2;
+      padding: 0;
+      max-width: 540px;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 38px;
+      text-shadow: 0 0 28px rgba(201, 168, 76, 0.08);
+      animation: fadeUp 1s 0.2s both;
+    }
+
+    .hero-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(88px, 9vw, 132px);
+      font-weight: 300;
+      line-height: 0.84;
+      letter-spacing: -2px;
+      animation: fadeUp 1s 0.4s both;
+      text-shadow: 0 14px 60px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-size: 12px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(245, 243, 239, 0.44);
+      margin-top: 34px;
+      margin-bottom: 42px;
+      animation: fadeUp 1s 0.6s both;
+    }
+
+    .hero-line {
+      width: 84px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 34px;
+      box-shadow: 0 0 16px rgba(201, 168, 76, 0.24);
+      animation: expandWidth 1s 0.8s both;
+    }
+
+    .hero-bio-short {
+      font-size: 17px;
+      line-height: 1.95;
+      color: rgba(245, 243, 239, 0.76);
+      max-width: 500px;
+      text-shadow: 0 10px 34px rgba(0, 0, 0, 0.42);
+      animation: fadeUp 1s 1s both;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 54px;
+      right: 42px;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(245, 243, 239, 0.54);
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      animation: fadeIn 1s 1.5s both;
+    }
+
+    .hero-scroll::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 74px;
+      background: var(--gold);
+      animation: scrollBar 2s 2s infinite;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(201, 168, 76, 0.3);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .stat-item {
+      padding: 40px 32px;
+      border-right: 1px solid rgba(201, 168, 76, 0.15);
+      text-align: center;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: 8px;
+    }
+
+    .section {
+      padding: var(--section-gap) 48px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .section-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 0.65em;
+      margin-left: 10px;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(201, 168, 76, 0.4), transparent);
+    }
+
+    .profile-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .profile-data table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .profile-data tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .profile-data td {
+      padding: 14px 0;
+      font-size: 13px;
+      vertical-align: top;
+    }
+
+    .profile-data td:first-child {
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 1px;
+      min-width: 140px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .profile-data td:last-child {
+      color: rgba(245, 243, 239, 0.85);
+    }
+
+    .profile-bio p {
+      font-size: 15px;
+      line-height: 2;
+      color: rgba(245, 243, 239, 0.8);
+      margin-bottom: 24px;
+    }
+
+    .profile-bio .quote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1.6;
+      border-left: 2px solid var(--gold);
+      padding-left: 24px;
+      margin: 32px 0;
+    }
+
+    .credits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .credit-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto auto;
+      gap: 24px;
+      align-items: center;
+      padding: 24px 32px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .credit-item:hover {
+      background: rgba(201, 168, 76, 0.05);
+      border-color: rgba(201, 168, 76, 0.2);
+      transform: translateX(4px);
+    }
+
+    .credit-year {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    .credit-title {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .credit-title small {
+      display: block;
+      font-size: 11px;
+      color: var(--grey);
+      font-weight: 300;
+      margin-top: 4px;
+      letter-spacing: 1px;
+    }
+
+    .credit-role {
+      font-size: 11px;
+      color: var(--grey);
+      text-align: right;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .credit-flag {
+      font-size: 20px;
+    }
+
+    .credit-featured {
+      background: rgba(201, 168, 76, 0.08);
+      border-color: rgba(201, 168, 76, 0.25);
+    }
+
+    .credit-badge {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--black);
+      padding: 3px 8px;
+      font-weight: 600;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 3 / 4;
+      background: #111;
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s ease, filter 0.4s;
+      filter: grayscale(15%);
+    }
+
+    .gallery-item.hero-crop img {
+      object-position: 78% 15%;
+    }
+
+    .gallery-item.still img {
+      object-position: center center;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 16px 16px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .skill-block {
+      padding: 40px 32px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.3s;
+    }
+
+    .skill-block:hover {
+      background: rgba(201, 168, 76, 0.05);
+      border-color: rgba(201, 168, 76, 0.15);
+    }
+
+    .skill-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .skill-name {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .skill-desc {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.7;
+    }
+
+    .ai-section {
+      background: rgba(201, 168, 76, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 64px 48px;
+      margin: 0 48px;
+    }
+
+    .ai-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .ai-badge {
+      background: var(--gold);
+      color: var(--black);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+    }
+
+    .ai-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 300;
+    }
+
+    .ai-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ai-select,
+    .ai-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .ai-select:focus,
+    .ai-input:focus {
+      border-color: rgba(201, 168, 76, 0.5);
+    }
+
+    .ai-select option {
+      background: #1a1a1a;
+    }
+
+    .ai-btn {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 14px 28px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .ai-btn:hover {
+      background: var(--gold-light);
+    }
+
+    .ai-output {
+      min-height: 120px;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(245, 243, 239, 0.85);
+      white-space: pre-wrap;
+    }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .contact-value {
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .contact-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 40px 0;
+    }
+
+    .contact-availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4caf7d;
+      margin-top: 16px;
+    }
+
+    .availability-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4caf7d;
+      animation: pulse 2s infinite;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      color: var(--grey);
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+
+    .training-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 32px;
+      color: var(--gold-light);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes expandWidth {
+      from {
+        width: 0;
+      }
+      to {
+        width: 60px;
+      }
+    }
+
+    @keyframes scrollBar {
+      0%, 100% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      50% {
+        opacity: 0.3;
+        transform: scaleY(0.5);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 28px 24px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section {
+        padding: 80px 24px;
+      }
+
+      .nav-logo {
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-img {
+        width: 100%;
+        object-position: 68% 24%;
+        filter: brightness(0.5) contrast(1.06) saturate(0.94);
+        box-shadow: none;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(180deg, rgba(6, 6, 6, 0.38) 0%, rgba(6, 6, 6, 0.44) 18%, rgba(6, 6, 6, 0.82) 58%, rgba(6, 6, 6, 0.96) 100%),
+          linear-gradient(90deg, rgba(6, 6, 6, 0.8) 0%, rgba(6, 6, 6, 0.24) 52%, rgba(6, 6, 6, 0.1) 100%);
+      }
+
+      .hero-content {
+        left: 24px;
+        right: 24px;
+        bottom: 96px;
+        max-width: none;
+      }
+
+      .hero-tag {
+        font-size: 10px;
+        letter-spacing: 4px;
+        margin-bottom: 24px;
+      }
+
+      .hero-name {
+        font-size: clamp(68px, 22vw, 96px);
+      }
+
+      .hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-top: 26px;
+        margin-bottom: 28px;
+      }
+
+      .hero-bio-short {
+        font-size: 15px;
+        line-height: 1.8;
+        max-width: 100%;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .credit-item {
+        grid-template-columns: 60px 1fr;
+      }
+
+      .credit-role,
+      .credit-flag {
+        display: none;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item.tall {
+        grid-row: span 1;
+      }
+
+      .skills-grid,
+      .ai-inputs,
+      .training-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-section {
+        margin: 0 24px;
+        padding: 40px 24px;
+      }
+
+      .lang-switcher {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(201, 168, 76, 0.2);
+        border-bottom: none;
+        justify-content: center;
+      }
+
+      .lang-btn {
+        min-width: 0;
+        padding: 10px 12px 9px;
+      }
+
+      .lang-btn .flag {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body data-lang="ko">
+  <div class="lang-switcher">
+    <button class="lang-btn" onclick="setLang('en')" data-lang-btn="en"><span class="flag">🇺🇸</span><span class="label">EN</span></button>
+    <button class="lang-btn active" onclick="setLang('ko')" data-lang-btn="ko"><span class="flag">🇰🇷</span><span class="label">한국어</span></button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang-btn="zh"><span class="flag">🇨🇳</span><span class="label">中文</span></button>
+    <button class="lang-btn" onclick="setLang('ja')" data-lang-btn="ja"><span class="flag">🇯🇵</span><span class="label">日本語</span></button>
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="#">VR</a>
+    <ul class="nav-links">
+      <li><a href="#profile" data-t="nav_profile">프로필</a></li>
+      <li><a href="#credits" data-t="nav_credits">경력</a></li>
+      <li><a href="#gallery" data-t="nav_gallery">갤러리</a></li>
+      <li><a href="#ai" data-t="nav_ai">AI 어시스턴트</a></li>
+      <li><a href="#contact" data-t="nav_contact">연락처</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <img class="hero-img" src="./assets/hero_portrait_clean.png" alt="Valentin Rodin">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag" data-t="hero_tag">배우 · 모델 · 콘텐츠 크리에이터 — 서울, 한국</p>
+      <h1 class="hero-name">Valentin<br><em>Rodin</em></h1>
+      <p class="hero-subtitle" data-t="hero_subtitle">배우 · 모델 · 콘텐츠 크리에이터</p>
+      <div class="hero-line"></div>
+      <p class="hero-bio-short" data-t="hero_bio">러시아 출신의 국제 배우. 영국·러시아·중국·인도·태국을 거쳐 현재 서울에서 활동 중.</p>
+    </div>
+    <div class="hero-scroll" data-t="scroll">Scroll</div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label" data-t="stat1_label">아시아 경력</div></div>
+    <div class="stat-item"><div class="stat-number">5</div><div class="stat-label" data-t="stat2_label">활동 국가</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label" data-t="stat3_label">구사 언어</div></div>
+    <div class="stat-item"><div class="stat-number">SBS</div><div class="stat-label" data-t="stat4_label">현재 출연</div></div>
+  </div>
+
+  <section class="section" id="profile">
+    <div class="section-header fade-in">
+      <span class="section-number">01</span>
+      <h2 class="section-title"><span data-t="s01_title">프로필</span><em data-t="s01_em">Profile</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-data fade-in">
+        <table>
+          <tr><td data-t="table_name">이름</td><td>Valentin Rodin (Volobuev)</td></tr>
+          <tr><td data-t="table_dob">생년월일</td><td data-t="dob_val">1983.01.16 (만 42세)</td></tr>
+          <tr><td data-t="table_nat">국적</td><td>Russian</td></tr>
+          <tr><td data-t="table_lang">언어</td><td data-t="lang_val">영어 · 러시아어 · 한국어 (기초)</td></tr>
+          <tr><td data-t="table_hw">키 / 몸무게</td><td data-t="hw_val">182cm / 75kg</td></tr>
+          <tr><td data-t="table_bust">가슴 / 허리</td><td>105cm / 80cm / 95cm</td></tr>
+          <tr><td data-t="table_size">상의 / 하의</td><td>M / 100-105 (M)</td></tr>
+          <tr><td data-t="table_shoes">신발</td><td>42.5 (255–265mm)</td></tr>
+          <tr><td data-t="table_hair">헤어 / 눈</td><td data-t="hair_val">블랙 / 블루</td></tr>
+          <tr><td data-t="table_tattoo">문신</td><td data-t="tattoo_val">팔 (오른쪽)</td></tr>
+          <tr><td data-t="table_ig">인스타그램</td><td>@Rodin_inbiz</td></tr>
+          <tr><td data-t="table_yt">유튜브</td><td>@MidnightCowboy1983</td></tr>
+          <tr><td data-t="table_kk">카카오 ID</td><td>ValentinRodin</td></tr>
+        </table>
+      </div>
+      <div class="profile-bio fade-in">
+        <div class="quote" data-t="quote">"아시아의 시선으로 세계를 담는 배우 — 경계를 넘은 경험이 곧 제 무기입니다."</div>
+        <p data-t="bio1">러시아 출신의 국제 배우로, 현재 서울을 거점으로 활동하고 있습니다. 다국적 제작 환경에 즉시 적응 가능한 강점을 보유하고 있습니다.</p>
+        <p data-t="bio2">중국 최고 예산 SF 블록버스터 《유랑하는 지구》에서 마카로프 역으로 출연하였으며, 현재 SBS 금토드라마 《우주메리미》에서 활동 중입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="credits" style="padding-top:0">
+    <div class="section-header fade-in">
+      <span class="section-number">02</span>
+      <h2 class="section-title"><span data-t="s02_title">출연 경력</span><em data-t="s02_em">Credits</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="credits-list fade-in">
+      <div class="credit-item credit-featured">
+        <span class="credit-year">2025–</span>
+        <div class="credit-title">
+          <span data-t="cr1_title">SBS 《우주메리미》</span>
+          <span class="credit-badge" data-t="badge_now">현재</span>
+          <small data-t="cr1_sub">SBS 금토드라마 · 대한민국</small>
+        </div>
+        <span class="credit-role" data-t="cr1_role">출연</span>
+        <span class="credit-flag">🇰🇷</span>
+      </div>
+      <div class="credit-item">
+        <span class="credit-year">2024–25</span>
+        <div class="credit-title">
+          <span data-t="cr2_title">《The Next Prince》</span>
+          <small data-t="cr2_sub">태국 드라마 시리즈</small>
+        </div>
+        <span class="credit-role" data-t="cr2_role">출연</span>
+        <span class="credit-flag">🇹🇭</span>
+      </div>
+      <div class="credit-item credit-featured">
+        <span class="credit-year">2022–23</span>
+        <div class="credit-title">
+          <span data-t="cr3_title">《유랑하는 지구》</span>
+          <small data-t="cr3_sub">중국 역대 최고 예산 SF · Jacky Wu 상대역</small>
+        </div>
+        <span class="credit-role" data-t="cr3_role">마카로프 우주비행사</span>
+        <span class="credit-flag">🇨🇳</span>
+      </div>
+      <div class="credit-item">
+        <span class="credit-year">2021</span>
+        <div class="credit-title">
+          <span data-t="cr4_title">《Commando 3》</span>
+          <small data-t="cr4_sub">볼리우드 액션 영화</small>
+        </div>
+        <span class="credit-role" data-t="cr4_role">경찰관</span>
+        <span class="credit-flag">🇮🇳</span>
+      </div>
+      <div class="credit-item">
+        <span class="credit-year">2015</span>
+        <div class="credit-title">
+          <span data-t="cr5_title">모스크바 24 연방 채널</span>
+          <small data-t="cr5_sub">뉴스 인턴십 · 러시아</small>
+        </div>
+        <span class="credit-role" data-t="cr5_role">TV 호스팅</span>
+        <span class="credit-flag">🇷🇺</span>
+      </div>
+      <div class="credit-item">
+        <span class="credit-year">2014</span>
+        <div class="credit-title">
+          <span data-t="cr6_title">《Dom 2》 리얼리티 쇼</span>
+          <small data-t="cr6_sub">수백만 시청자 · 러시아 전국 방송</small>
+        </div>
+        <span class="credit-role" data-t="cr6_role">출연</span>
+        <span class="credit-flag">🇷🇺</span>
+      </div>
+    </div>
+    <div class="training-grid fade-in">
+      <div><h3 class="training-title" data-t="training_title">교육 및 훈련</h3></div>
+      <div></div>
+      <div class="credit-item"><span class="credit-year" style="font-size:13px">연기</span><div class="credit-title">모스크바 영화·텔레비전 대학교 — 연기 과정 (1년)</div><span></span><span class="credit-flag">🇷🇺</span></div>
+      <div class="credit-item"><span class="credit-year" style="font-size:13px">호스팅</span><div class="credit-title">모스크바 영화·텔레비전 대학교 — TV 호스팅 과정 (1년)</div><span></span><span class="credit-flag">🇷🇺</span></div>
+      <div class="credit-item"><span class="credit-year" style="font-size:13px">현장</span><div class="credit-title">《유랑하는 지구》 촬영 현장 — 집중 연기 트레이닝</div><span></span><span class="credit-flag">🇨🇳</span></div>
+      <div class="credit-item"><span class="credit-year" style="font-size:13px">무술</span><div class="credit-title">복싱 · 무술 · 무대 격투 · 수영</div><span></span><span class="credit-flag">⚔️</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery" style="padding-top:0">
+    <div class="section-header fade-in">
+      <span class="section-number">03</span>
+      <h2 class="section-title"><span data-t="s03_title">포트폴리오</span><em data-t="s03_em">Gallery</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-grid fade-in">
+      <div class="gallery-item tall hero-crop">
+        <img src="./assets/portfolio_page1.png" alt="Editorial portrait">
+        <div class="gallery-caption">Editorial</div>
+      </div>
+      <div class="gallery-item still">
+        <img src="./assets/drama_still.jpg" alt="Drama still">
+        <div class="gallery-caption">Acting</div>
+      </div>
+      <div class="gallery-item hero-crop">
+        <img src="./assets/portfolio_page1.png" alt="Character portrait">
+        <div class="gallery-caption">Character</div>
+      </div>
+      <div class="gallery-item">
+        <img src="./assets/portfolio_page1.png" alt="Commercial portrait">
+        <div class="gallery-caption">Commercial</div>
+      </div>
+      <div class="gallery-item still">
+        <img src="./assets/drama_still.jpg" alt="SBS still">
+        <div class="gallery-caption">SBS</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills" style="padding-top:0">
+    <div class="section-header fade-in">
+      <span class="section-number">04</span>
+      <h2 class="section-title"><span data-t="s04_title">특기 및 능력</span><em data-t="s04_em">Skills</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-block"><div class="skill-icon">🎭</div><div class="skill-name">연기 · Acting</div><div class="skill-desc">드라마, 액션, 상업 광고 전반. 다국적 제작 환경 경험.</div></div>
+      <div class="skill-block"><div class="skill-icon">📸</div><div class="skill-name">모델링 · Modeling</div><div class="skill-desc">에디토리얼, 상업 광고, 라이프스타일.</div></div>
+      <div class="skill-block"><div class="skill-icon">🎬</div><div class="skill-name">콘텐츠 · Content</div><div class="skill-desc">YouTube 여행·자기계발 채널 운영.</div></div>
+      <div class="skill-block"><div class="skill-icon">⚔️</div><div class="skill-name">신체 능력 · Physical</div><div class="skill-desc">복싱, 무술, 무대 격투, 수영.</div></div>
+      <div class="skill-block"><div class="skill-icon">🎵</div><div class="skill-name">보컬 · Vocal</div><div class="skill-desc">명확한 딕션과 TV 호스팅 경험.</div></div>
+      <div class="skill-block"><div class="skill-icon">🌏</div><div class="skill-name">언어 · Language</div><div class="skill-desc">영어 · 러시아어 · 한국어 (기초).</div></div>
+    </div>
+  </section>
+
+  <div id="ai">
+    <section class="ai-section fade-in">
+      <div class="ai-header">
+        <span class="ai-badge" data-t="ai_badge">AI 기반</span>
+        <h3 class="ai-title" data-t="ai_title">캐스팅 어시스턴트</h3>
+      </div>
+      <p style="font-size:13px;color:var(--grey);margin-bottom:28px;line-height:1.8" data-t="ai_desc">Valentin의 프로필을 기반으로 소개문과 캐릭터 포지셔닝을 생성합니다.</p>
+      <div class="ai-inputs">
+        <select class="ai-select" id="aiType">
+          <option value="agency" data-t-opt="ai_opt1">에이전시용 자기소개</option>
+          <option value="casting" data-t-opt="ai_opt2">캐스팅용 자기소개</option>
+          <option value="brand" data-t-opt="ai_opt3">브랜드/광고용 프로필</option>
+          <option value="character" data-t-opt="ai_opt4">적합한 캐릭터 분석</option>
+          <option value="pitch" data-t-opt="ai_opt5">에이전시 피치 메시지</option>
+          <option value="custom" data-t-opt="ai_opt6">직접 질문 입력</option>
+        </select>
+        <input class="ai-input" id="customPrompt" data-t-placeholder="ai_placeholder" placeholder="또는 직접 질문을 입력하세요..." type="text">
+        <button class="ai-btn" id="aiBtn" onclick="generateContent()" data-t="ai_btn">생성하기 ›</button>
+      </div>
+      <div class="ai-output" id="aiOutput"><span style="color:var(--grey);font-size:14px;font-family:Montserrat,sans-serif;letter-spacing:1px" data-t="ai_default">위에서 유형을 선택하고 생성하기를 클릭하세요 ›</span></div>
+    </section>
+  </div>
+
+  <section class="section" id="contact">
+    <div class="section-header fade-in">
+      <span class="section-number">05</span>
+      <h2 class="section-title"><span data-t="s05_title">연락처</span><em data-t="s05_em">Contact</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid fade-in">
+      <div>
+        <div class="contact-label">카카오 KakaoTalk</div>
+        <div class="contact-value">ValentinRodin</div>
+        <div class="contact-label">인스타그램 Instagram</div>
+        <div class="contact-value">@Rodin_inbiz</div>
+        <div class="contact-label">유튜브 YouTube</div>
+        <div class="contact-value">@MidnightCowboy1983</div>
+        <div class="contact-divider"></div>
+        <div class="contact-availability"><span class="availability-dot"></span><span data-t="avail">현재 서울 거주 · 프로젝트 수락 가능</span></div>
+      </div>
+      <div style="padding-top:8px">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1.6;margin-bottom:24px;color:var(--gold-light)" data-t="contact_headline">드라마·광고·브랜드 협업 문의를 환영합니다.</p>
+        <p style="font-size:13px;color:var(--grey);line-height:1.9" data-t="contact_body1">현재 서울을 거점으로 한국 및 아시아 전역 프로젝트에 참여 가능합니다.</p>
+        <p style="font-size:13px;color:var(--grey);line-height:1.9;margin-top:16px" data-t="contact_body2">카카오톡 또는 인스타그램 DM으로 연락 주시면 빠르게 답변드리겠습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-name">Valentin Rodin (Volobuev)</span>
+    <span class="footer-copy" data-t="footer_copy">배우 · 모델 · 서울 2025</span>
+  </footer>
+
+  <script>
+    const T = {
+      en: {
+        nav_profile: "Profile",
+        nav_credits: "Credits",
+        nav_gallery: "Gallery",
+        nav_ai: "AI Assistant",
+        nav_contact: "Contact",
+        hero_tag: "Actor · Model · Content Creator — Seoul, Korea",
+        hero_subtitle: "Actor · Model · Content Creator",
+        hero_bio: "Russian-born international actor, based in Seoul. Credits across UK, Russia, China, India, Thailand, and South Korea.",
+        stat1_label: "Years in Asia",
+        stat2_label: "Countries",
+        stat3_label: "Languages",
+        stat4_label: "Current Credit",
+        s01_title: "Profile",
+        s01_em: "",
+        table_name: "Name",
+        table_dob: "Date of Birth",
+        table_nat: "Nationality",
+        table_lang: "Languages",
+        table_hw: "Height / Weight",
+        table_bust: "Bust / Waist",
+        table_size: "Shirt / Pants",
+        table_shoes: "Shoes",
+        table_hair: "Hair / Eyes",
+        table_tattoo: "Tattoo",
+        table_ig: "Instagram",
+        table_yt: "YouTube",
+        table_kk: "KakaoTalk",
+        dob_val: "1983.01.16 (Age 42)",
+        lang_val: "English · Russian · Korean (basic)",
+        hair_val: "Black / Blue",
+        tattoo_val: "Arm (Right)",
+        quote: "\"An actor shaped by Asia — borderless experience as screen strength.\"",
+        bio1: "Russian-born international actor currently based in Seoul, with long-term production experience across Asia.",
+        bio2: "Known for The Wandering Earth and current SBS drama work.",
+        s02_title: "Credits",
+        s02_em: "",
+        badge_now: "NOW",
+        cr1_title: "SBS Would You Marry Me in Space",
+        cr1_sub: "SBS Friday-Saturday Drama · South Korea",
+        cr1_role: "Cast",
+        cr2_title: "The Next Prince",
+        cr2_sub: "Thai Drama Series",
+        cr2_role: "Cast",
+        cr3_title: "The Wandering Earth",
+        cr3_sub: "China Sci-Fi Blockbuster · Opposite Jacky Wu",
+        cr3_role: "Astronaut Makarov",
+        cr4_title: "Commando 3",
+        cr4_sub: "Bollywood Action Film",
+        cr4_role: "Police Officer",
+        cr5_title: "Moscow 24 Federal Channel",
+        cr5_sub: "News Internship · Russia",
+        cr5_role: "TV Hosting",
+        cr6_title: "Dom 2 Reality Show",
+        cr6_sub: "National TV · Russia",
+        cr6_role: "Cast",
+        training_title: "Training & Education",
+        s03_title: "Gallery",
+        s03_em: "",
+        s04_title: "Skills",
+        s04_em: "",
+        ai_badge: "AI Powered",
+        ai_title: "Casting Assistant",
+        ai_desc: "Generate intros and positioning text based on Valentin's profile.",
+        ai_opt1: "Agency Bio",
+        ai_opt2: "Casting Bio",
+        ai_opt3: "Brand / Ad Profile",
+        ai_opt4: "Character Fit Analysis",
+        ai_opt5: "Agency Pitch Message",
+        ai_opt6: "Custom Question",
+        ai_placeholder: "Or type your own question...",
+        ai_btn: "Generate ›",
+        ai_default: "Select a type above and click Generate ›",
+        s05_title: "Contact",
+        s05_em: "",
+        avail: "Based in Seoul · Available for Projects",
+        contact_headline: "Open to drama, commercial & brand collaborations.",
+        contact_body1: "Currently based in Seoul, available for projects across Korea and Asia.",
+        contact_body2: "Reach out via KakaoTalk or Instagram DM for a prompt response.",
+        footer_copy: "Actor · Model · Seoul 2025",
+        scroll: "Scroll"
+      },
+      ko: {
+        nav_profile: "프로필",
+        nav_credits: "경력",
+        nav_gallery: "갤러리",
+        nav_ai: "AI 어시스턴트",
+        nav_contact: "연락처",
+        hero_tag: "배우 · 모델 · 콘텐츠 크리에이터 — 서울, 한국",
+        hero_subtitle: "배우 · 모델 · 콘텐츠 크리에이터",
+        hero_bio: "러시아 출신의 국제 배우. 영국·러시아·중국·인도·태국을 거쳐 현재 서울에서 활동 중.",
+        stat1_label: "아시아 경력",
+        stat2_label: "활동 국가",
+        stat3_label: "구사 언어",
+        stat4_label: "현재 출연",
+        s01_title: "프로필",
+        s01_em: "Profile",
+        table_name: "이름",
+        table_dob: "생년월일",
+        table_nat: "국적",
+        table_lang: "언어",
+        table_hw: "키 / 몸무게",
+        table_bust: "가슴 / 허리",
+        table_size: "상의 / 하의",
+        table_shoes: "신발",
+        table_hair: "헤어 / 눈",
+        table_tattoo: "문신",
+        table_ig: "인스타그램",
+        table_yt: "유튜브",
+        table_kk: "카카오 ID",
+        dob_val: "1983.01.16 (만 42세)",
+        lang_val: "영어 · 러시아어 · 한국어 (기초)",
+        hair_val: "블랙 / 블루",
+        tattoo_val: "팔 (오른쪽)",
+        quote: "\"아시아의 시선으로 세계를 담는 배우 — 경계를 넘은 경험이 곧 제 무기입니다.\"",
+        bio1: "러시아 출신의 국제 배우로, 현재 서울을 거점으로 활동하고 있습니다. 다국적 제작 환경에 즉시 적응 가능한 강점을 보유하고 있습니다.",
+        bio2: "중국 최고 예산 SF 블록버스터 《유랑하는 지구》에서 마카로프 역으로 출연하였으며, 현재 SBS 금토드라마 《우주메리미》에서 활동 중입니다.",
+        s02_title: "출연 경력",
+        s02_em: "Credits",
+        badge_now: "현재",
+        cr1_title: "SBS 《우주메리미》",
+        cr1_sub: "SBS 금토드라마 · 대한민국",
+        cr1_role: "출연",
+        cr2_title: "《The Next Prince》",
+        cr2_sub: "태국 드라마 시리즈",
+        cr2_role: "출연",
+        cr3_title: "《유랑하는 지구》",
+        cr3_sub: "중국 역대 최고 예산 SF · Jacky Wu 상대역",
+        cr3_role: "마카로프 우주비행사",
+        cr4_title: "《Commando 3》",
+        cr4_sub: "볼리우드 액션 영화",
+        cr4_role: "경찰관",
+        cr5_title: "모스크바 24 연방 채널",
+        cr5_sub: "뉴스 인턴십 · 러시아",
+        cr5_role: "TV 호스팅",
+        cr6_title: "《Dom 2》 리얼리티 쇼",
+        cr6_sub: "수백만 시청자 · 러시아 전국 방송",
+        cr6_role: "출연",
+        training_title: "교육 및 훈련",
+        s03_title: "포트폴리오",
+        s03_em: "Gallery",
+        s04_title: "특기 및 능력",
+        s04_em: "Skills",
+        ai_badge: "AI 기반",
+        ai_title: "캐스팅 어시스턴트",
+        ai_desc: "Valentin의 프로필을 기반으로 소개문과 캐릭터 포지셔닝을 생성합니다.",
+        ai_opt1: "에이전시용 자기소개",
+        ai_opt2: "캐스팅용 자기소개",
+        ai_opt3: "브랜드/광고용 프로필",
+        ai_opt4: "적합한 캐릭터 분석",
+        ai_opt5: "에이전시 피치 메시지",
+        ai_opt6: "직접 질문 입력",
+        ai_placeholder: "또는 직접 질문을 입력하세요...",
+        ai_btn: "생성하기 ›",
+        ai_default: "위에서 유형을 선택하고 생성하기를 클릭하세요 ›",
+        s05_title: "연락처",
+        s05_em: "Contact",
+        avail: "현재 서울 거주 · 프로젝트 수락 가능",
+        contact_headline: "드라마·광고·브랜드 협업 문의를 환영합니다.",
+        contact_body1: "현재 서울을 거점으로 한국 및 아시아 전역 프로젝트에 참여 가능합니다.",
+        contact_body2: "카카오톡 또는 인스타그램 DM으로 연락 주시면 빠르게 답변드리겠습니다.",
+        footer_copy: "배우 · 모델 · 서울 2025",
+        scroll: "Scroll"
+      }
+    };
+
+    const canned = {
+      ko: {
+        agency: "Valentin Rodin은 서울을 거점으로 활동하는 국제 배우로, 한국·중국·태국·인도 현장 경험을 바탕으로 강한 존재감과 안정적인 영어/러시아어 대사 소화 능력을 갖춘 배우입니다.",
+        casting: "강렬한 유러피안 인상, 182cm의 피지컬, 액션 및 지적 캐릭터 소화력이 강점인 배우입니다. SBS 드라마와 《유랑하는 지구》 출연 경력이 즉시 신뢰를 만듭니다.",
+        brand: "포멀, 럭셔리, 라이프스타일, 프리미엄 브랜드 무드에 적합한 유러피안 비주얼과 온카메라 안정감을 갖춘 모델·배우입니다.",
+        character: "적합한 캐릭터:\n1. 냉정한 형사 / 수사관\n2. 글로벌 기업 임원 / 외교관\n3. 미스터리한 조력자 혹은 빌런",
+        pitch: "안녕하세요. 서울 기반 국제 배우 Valentin Rodin을 소개드립니다. SBS 드라마, 중국 블록버스터 《유랑하는 지구》, 태국 및 인도 프로젝트 경험을 바탕으로 한국 시장에서도 활용도 높은 외국인 배우 포지션을 갖추고 있습니다."
+      },
+      en: {
+        agency: "Valentin Rodin is a Seoul-based international actor with strong screen presence, premium foreigner-role potential, and production experience across Korea, China, Thailand, India, and Russia.",
+        casting: "A mature European look, 182 cm frame, blue eyes, and strong authority-driven energy make Valentin well suited for premium foreigner roles, investigators, executives, and antagonists.",
+        brand: "Valentin offers a polished European image with cinematic credibility, ideal for premium lifestyle, hospitality, luxury, automotive, and spokesperson-oriented campaigns.",
+        character: "Best-fit character types:\n1. Detective or investigator\n2. Corporate strategist or diplomat\n3. Charismatic villain or ambiguous ally",
+        pitch: "Hello. I would like to introduce Valentin Rodin, a Seoul-based international actor with credits in SBS drama, The Wandering Earth, Thai drama, and Bollywood action production."
+      }
+    };
+
+    let currentLang = "ko";
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.body.setAttribute("data-lang", lang);
+      document.documentElement.lang = lang;
+      const t = T[lang] || T.ko;
+      document.querySelectorAll("[data-t]").forEach((el) => {
+        const key = el.getAttribute("data-t");
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.querySelectorAll("[data-t-opt]").forEach((el) => {
+        const key = el.getAttribute("data-t-opt");
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      document.querySelectorAll("[data-t-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-t-placeholder");
+        if (t[key] !== undefined) el.placeholder = t[key];
+      });
+      document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
+      });
+      document.title = lang === "ko" ? "VALENTIN RODIN — 배우 · 모델 · 콘텐츠 크리에이터" : "VALENTIN RODIN — Actor · Model · Content Creator";
+    }
+
+    function generateContent() {
+      const type = document.getElementById("aiType").value;
+      const custom = document.getElementById("customPrompt").value.trim();
+      const output = document.getElementById("aiOutput");
+      if (type === "custom") {
+        output.textContent = custom || (currentLang === "ko" ? "질문을 입력해 주세요." : "Please enter a question.");
+        return;
+      }
+      const bank = canned[currentLang] || canned.ko;
+      output.textContent = bank[type] || bank.agency;
+    }
+
+    document.getElementById("customPrompt").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") generateContent();
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
