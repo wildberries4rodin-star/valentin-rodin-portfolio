@@ -223,13 +223,29 @@
       font-weight: 300;
       line-height: 0.84;
       letter-spacing: -2px;
-      animation: fadeUp 1s 0.4s both;
+      color: rgba(245, 243, 239, 0.94);
+      background-image: linear-gradient(
+        112deg,
+        rgba(238, 234, 229, 0.96) 0%,
+        rgba(238, 234, 229, 0.96) 34%,
+        rgba(255, 255, 255, 0.99) 45%,
+        rgba(193, 203, 216, 0.98) 50%,
+        rgba(255, 255, 255, 0.99) 55%,
+        rgba(238, 234, 229, 0.96) 66%,
+        rgba(238, 234, 229, 0.96) 100%
+      );
+      background-size: 240% 100%;
+      background-position: 118% center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeUp 1s 0.4s both, heroShine 7.2s ease-in-out 1.2s infinite;
       text-shadow: 0 14px 60px rgba(0, 0, 0, 0.65);
     }
 
     .hero-name em {
-      font-style: italic;
-      color: var(--gold-light);
+      font-style: normal;
+      color: inherit;
     }
 
     .hero-subtitle {
@@ -845,6 +861,21 @@
       }
       50% {
         opacity: 0.3;
+      }
+    }
+
+    @keyframes heroShine {
+      0% {
+        background-position: 118% center;
+      }
+      42% {
+        background-position: 118% center;
+      }
+      58% {
+        background-position: -16% center;
+      }
+      100% {
+        background-position: -16% center;
       }
     }
 
