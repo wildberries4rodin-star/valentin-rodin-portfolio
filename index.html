@@ -265,7 +265,8 @@
       position: relative;
       z-index: 2;
       margin-top: 12px;
-      width: min(calc(100vw - (var(--page-pad-desktop) * 2)), 980px);
+      width: calc(100vw - var(--page-pad-desktop) - 28px);
+      max-width: none;
       padding: 14px 18px;
       border: 1px solid rgba(245, 243, 239, 0.08);
       background:
@@ -279,6 +280,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+      width: 100%;
     }
 
     .partner-strip-label {
@@ -297,6 +299,7 @@
       flex-wrap: nowrap;
       gap: 8px;
       flex: 1;
+      margin-left: auto;
     }
 
     .partner-logo-card {
@@ -892,7 +895,7 @@
       }
 
       .partner-strip {
-        width: min(calc(100vw - 112px), 860px);
+        width: calc(100vw - 84px);
       }
     }
 
