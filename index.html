@@ -153,6 +153,18 @@
       background: #060606;
     }
 
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(6, 6, 6, 0) 44%, rgba(6, 6, 6, 0.08) 54%, rgba(6, 6, 6, 0.24) 64%, rgba(6, 6, 6, 0.56) 100%),
+        linear-gradient(180deg, rgba(6, 6, 6, 0.28) 0%, rgba(6, 6, 6, 0.02) 22%, rgba(6, 6, 6, 0.02) 76%, rgba(6, 6, 6, 0.38) 100%),
+        radial-gradient(circle at 100% 50%, rgba(6, 6, 6, 0.34), transparent 32%);
+    }
+
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -897,6 +909,12 @@
         background:
           linear-gradient(180deg, rgba(6, 6, 6, 0.38) 0%, rgba(6, 6, 6, 0.44) 18%, rgba(6, 6, 6, 0.82) 58%, rgba(6, 6, 6, 0.96) 100%),
           linear-gradient(90deg, rgba(6, 6, 6, 0.8) 0%, rgba(6, 6, 6, 0.24) 52%, rgba(6, 6, 6, 0.1) 100%);
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(180deg, rgba(6, 6, 6, 0.16) 0%, rgba(6, 6, 6, 0.02) 20%, rgba(6, 6, 6, 0.08) 78%, rgba(6, 6, 6, 0.28) 100%),
+          linear-gradient(90deg, rgba(6, 6, 6, 0.26) 0%, rgba(6, 6, 6, 0) 32%, rgba(6, 6, 6, 0.14) 82%, rgba(6, 6, 6, 0.34) 100%);
       }
 
       .hero-content {
