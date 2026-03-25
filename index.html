@@ -146,7 +146,7 @@
 
     .hero {
       height: 100vh;
-      min-height: 920px;
+      min-height: 860px;
       position: relative;
       display: block;
       overflow: hidden;
@@ -200,7 +200,7 @@
     .hero-content {
       position: absolute;
       left: var(--page-pad-desktop);
-      bottom: 108px;
+      bottom: 142px;
       z-index: 2;
       padding: 0;
       max-width: 560px;
@@ -264,11 +264,13 @@
     .partner-strip {
       position: relative;
       z-index: 3;
-      margin: -1px 48px 0;
-      padding: 22px 28px;
-      border-top: 1px solid rgba(245, 243, 239, 0.08);
-      border-bottom: 1px solid rgba(245, 243, 239, 0.08);
-      background: linear-gradient(180deg, rgba(15, 15, 15, 0.94) 0%, rgba(10, 10, 10, 0.9) 100%);
+      margin: -74px 48px 0;
+      padding: 18px 28px;
+      border: 1px solid rgba(245, 243, 239, 0.08);
+      background:
+        linear-gradient(180deg, rgba(18, 18, 18, 0.64) 0%, rgba(10, 10, 10, 0.48) 100%);
+      backdrop-filter: blur(18px) saturate(120%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
     }
 
     .partner-strip-inner {
@@ -282,7 +284,7 @@
       font-size: 10px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(245, 243, 239, 0.42);
+      color: rgba(245, 243, 239, 0.34);
       white-space: nowrap;
     }
 
@@ -299,19 +301,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 62px;
+      min-height: 56px;
       min-width: 154px;
-      padding: 16px 22px;
-      border: 1px solid rgba(245, 243, 239, 0.08);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+      padding: 14px 22px;
+      border: 1px solid rgba(245, 243, 239, 0.06);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%);
       backdrop-filter: blur(12px);
-      color: rgba(245, 243, 239, 0.72);
-      transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
     }
 
     .partner-logo-card:hover {
-      border-color: rgba(201, 168, 76, 0.22);
-      color: rgba(245, 243, 239, 0.88);
+      border-color: rgba(201, 168, 76, 0.18);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.02) 100%);
       transform: translateY(-1px);
     }
 
@@ -323,11 +324,11 @@
     }
 
     .partner-logo--samsung {
-      height: 18px;
+      height: 19px;
     }
 
     .partner-logo--netflix {
-      height: 20px;
+      height: 19px;
     }
 
     .partner-logo--mbc {
@@ -363,6 +364,7 @@
       grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid rgba(201, 168, 76, 0.3);
       border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      margin-top: 28px;
     }
 
     .stat-item {
@@ -890,7 +892,7 @@
       }
 
       .hero {
-        min-height: 860px;
+        min-height: 820px;
       }
 
       .hero-img {
@@ -905,7 +907,7 @@
 
       .hero-content {
         left: 56px;
-        bottom: 96px;
+        bottom: 122px;
         max-width: 500px;
       }
 
@@ -1000,8 +1002,8 @@
       }
 
       .partner-strip {
-        margin: -1px 24px 0;
-        padding: 18px 18px;
+        margin: -54px 24px 0;
+        padding: 16px 18px;
       }
 
       .partner-strip-inner {
@@ -1018,17 +1020,17 @@
       }
 
       .partner-logo-card {
-        min-height: 52px;
+        min-height: 48px;
         min-width: 120px;
-        padding: 12px 14px;
+        padding: 11px 14px;
       }
 
       .partner-logo {
-        height: 18px;
+        height: 17px;
       }
 
       .partner-logo--samsung {
-        height: 15px;
+        height: 16px;
       }
 
       .partner-logo--mbc {
@@ -1116,7 +1118,7 @@
       }
 
       .hero-content {
-        bottom: 58px;
+        bottom: 70px;
       }
 
       .hero-tag {
@@ -1146,8 +1148,8 @@
       }
 
       .partner-strip {
-        margin: -1px 16px 0;
-        padding: 16px 14px;
+        margin: -32px 16px 0;
+        padding: 14px 14px;
       }
 
       .partner-strip-inner {
