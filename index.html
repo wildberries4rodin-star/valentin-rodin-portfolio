@@ -265,7 +265,7 @@
       position: relative;
       z-index: 2;
       margin-top: 12px;
-      width: 100%;
+      width: min(calc(100vw - (var(--page-pad-desktop) * 2)), 980px);
       padding: 14px 18px;
       border: 1px solid rgba(245, 243, 239, 0.08);
       background:
@@ -892,7 +892,7 @@
       }
 
       .partner-strip {
-        width: 100%;
+        width: min(calc(100vw - 112px), 860px);
       }
     }
 
@@ -976,6 +976,7 @@
       .partner-strip-label {
         font-size: 9px;
         letter-spacing: 3px;
+        flex: 0 0 auto;
       }
 
       .partner-logo-list {
@@ -1110,6 +1111,10 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 12px;
+      }
+
+      .partner-strip {
+        width: 100%;
       }
 
       .partner-logo-list {
