@@ -897,12 +897,13 @@
       }
 
       .hero-img {
-        width: 100%;
-        top: 0;
-        height: 100%;
-        object-position: 68% 24%;
+        width: calc(100% - 40px);
+        right: -12px;
+        top: 30px;
+        height: calc(100% - 122px);
+        object-position: 58% 22%;
         filter: brightness(0.5) contrast(1.06) saturate(0.94);
-        box-shadow: none;
+        box-shadow: -40px 0 72px rgba(0, 0, 0, 0.42);
       }
 
       .hero-overlay {
@@ -913,8 +914,8 @@
 
       .hero::after {
         background:
-          linear-gradient(180deg, rgba(6, 6, 6, 0.16) 0%, rgba(6, 6, 6, 0.02) 20%, rgba(6, 6, 6, 0.08) 78%, rgba(6, 6, 6, 0.28) 100%),
-          linear-gradient(90deg, rgba(6, 6, 6, 0.26) 0%, rgba(6, 6, 6, 0) 32%, rgba(6, 6, 6, 0.14) 82%, rgba(6, 6, 6, 0.34) 100%);
+          linear-gradient(180deg, rgba(6, 6, 6, 0.28) 0%, rgba(6, 6, 6, 0.04) 18%, rgba(6, 6, 6, 0.1) 74%, rgba(6, 6, 6, 0.34) 100%),
+          linear-gradient(90deg, rgba(6, 6, 6, 0.48) 0%, rgba(6, 6, 6, 0.1) 20%, rgba(6, 6, 6, 0) 40%, rgba(6, 6, 6, 0.14) 78%, rgba(6, 6, 6, 0.42) 100%);
       }
 
       .hero-content {
@@ -1042,6 +1043,14 @@
         min-height: 700px;
       }
 
+      .hero-img {
+        width: calc(100% - 28px);
+        right: -10px;
+        top: 22px;
+        height: calc(100% - 106px);
+        object-position: 56% 20%;
+      }
+
       .hero-content {
         bottom: 58px;
       }
@@ -1064,6 +1073,12 @@
 
       .hero-bio-short {
         font-size: 14px;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(180deg, rgba(6, 6, 6, 0.24) 0%, rgba(6, 6, 6, 0.04) 16%, rgba(6, 6, 6, 0.1) 76%, rgba(6, 6, 6, 0.32) 100%),
+          linear-gradient(90deg, rgba(6, 6, 6, 0.42) 0%, rgba(6, 6, 6, 0.08) 18%, rgba(6, 6, 6, 0) 36%, rgba(6, 6, 6, 0.12) 82%, rgba(6, 6, 6, 0.38) 100%);
       }
     }
   </style>
