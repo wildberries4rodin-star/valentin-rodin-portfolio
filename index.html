@@ -17,6 +17,8 @@
       --grey: #888;
       --grey-light: #ccc;
       --section-gap: 120px;
+      --page-pad-desktop: 72px;
+      --page-pad-mobile: 24px;
     }
 
     * {
@@ -111,32 +113,19 @@
       right: 0;
       z-index: 100;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
-      padding: 40px 72px 0;
+      padding: 40px 332px 0 var(--page-pad-desktop);
       background: none;
       backdrop-filter: none;
       pointer-events: none;
     }
 
-    .nav-logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
-      font-weight: 300;
-      letter-spacing: 6px;
-      color: var(--gold);
-      text-decoration: none;
-      margin-top: 4px;
-      text-shadow: 0 0 28px rgba(201, 168, 76, 0.1);
-      pointer-events: auto;
-    }
-
     .nav-links {
       display: flex;
-      gap: 40px;
+      gap: 36px;
       list-style: none;
       margin-top: 10px;
-      margin-right: 276px;
       pointer-events: auto;
     }
 
@@ -175,11 +164,11 @@
     .hero-img {
       position: absolute;
       right: 0;
-      top: 0;
-      height: 100%;
-      width: min(58vw, 1040px);
+      top: 18px;
+      height: calc(100% - 18px);
+      width: min(54vw, 920px);
       object-fit: cover;
-      object-position: 58% center;
+      object-position: 54% center;
       filter: brightness(0.8) contrast(1.08) saturate(0.92);
       box-shadow: -90px 0 120px rgba(0, 0, 0, 0.75);
     }
@@ -196,11 +185,11 @@
 
     .hero-content {
       position: absolute;
-      left: 72px;
-      bottom: 120px;
+      left: var(--page-pad-desktop);
+      bottom: 108px;
       z-index: 2;
       padding: 0;
-      max-width: 540px;
+      max-width: 560px;
     }
 
     .hero-tag {
@@ -209,7 +198,7 @@
       letter-spacing: 8px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 38px;
+      margin-bottom: 28px;
       text-shadow: 0 0 28px rgba(201, 168, 76, 0.08);
       animation: fadeUp 1s 0.2s both;
     }
@@ -231,30 +220,66 @@
 
     .hero-subtitle {
       font-size: 12px;
-      letter-spacing: 6px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(245, 243, 239, 0.44);
-      margin-top: 34px;
-      margin-bottom: 42px;
+      color: rgba(245, 243, 239, 0.58);
+      margin-top: 28px;
+      margin-bottom: 28px;
       animation: fadeUp 1s 0.6s both;
     }
 
     .hero-line {
-      width: 84px;
+      width: 72px;
       height: 2px;
       background: var(--gold);
-      margin-bottom: 34px;
+      margin-bottom: 28px;
       box-shadow: 0 0 16px rgba(201, 168, 76, 0.24);
       animation: expandWidth 1s 0.8s both;
     }
 
     .hero-bio-short {
       font-size: 17px;
-      line-height: 1.95;
+      line-height: 1.82;
       color: rgba(245, 243, 239, 0.76);
-      max-width: 500px;
+      max-width: 520px;
+      margin-bottom: 28px;
       text-shadow: 0 10px 34px rgba(0, 0, 0, 0.42);
       animation: fadeUp 1s 1s both;
+    }
+
+    .hero-brands {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      animation: fadeUp 1s 1.15s both;
+    }
+
+    .hero-brands-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(245, 243, 239, 0.42);
+    }
+
+    .hero-brand-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 10px 16px;
+      border: 1px solid rgba(245, 243, 239, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: rgba(245, 243, 239, 0.82);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
     }
 
     .hero-scroll {
@@ -803,9 +828,46 @@
       transform: translateY(0);
     }
 
+    @media (max-width: 1200px) {
+      nav {
+        padding: 34px 292px 0 56px;
+      }
+
+      .nav-links {
+        gap: 28px;
+      }
+
+      .hero {
+        min-height: 860px;
+      }
+
+      .hero-img {
+        width: min(56vw, 760px);
+        object-position: 56% center;
+      }
+
+      .hero-content {
+        left: 56px;
+        bottom: 96px;
+        max-width: 500px;
+      }
+
+      .hero-tag {
+        letter-spacing: 6px;
+      }
+
+      .hero-name {
+        font-size: clamp(78px, 8vw, 116px);
+      }
+
+      .hero-bio-short {
+        font-size: 16px;
+      }
+    }
+
     @media (max-width: 900px) {
       nav {
-        padding: 28px 24px 0;
+        padding: 28px var(--page-pad-mobile) 0;
       }
 
       .nav-links {
@@ -816,17 +878,14 @@
         padding: 80px 24px;
       }
 
-      .nav-logo {
-        font-size: 20px;
-        letter-spacing: 5px;
-      }
-
       .hero {
         min-height: 760px;
       }
 
       .hero-img {
         width: 100%;
+        top: 0;
+        height: 100%;
         object-position: 68% 24%;
         filter: brightness(0.5) contrast(1.06) saturate(0.94);
         box-shadow: none;
@@ -839,16 +898,16 @@
       }
 
       .hero-content {
-        left: 24px;
-        right: 24px;
-        bottom: 96px;
+        left: var(--page-pad-mobile);
+        right: var(--page-pad-mobile);
+        bottom: 82px;
         max-width: none;
       }
 
       .hero-tag {
         font-size: 10px;
         letter-spacing: 4px;
-        margin-bottom: 24px;
+        margin-bottom: 18px;
       }
 
       .hero-name {
@@ -857,15 +916,41 @@
 
       .hero-subtitle {
         font-size: 10px;
-        letter-spacing: 3px;
-        margin-top: 26px;
-        margin-bottom: 28px;
+        letter-spacing: 2.6px;
+        line-height: 1.6;
+        margin-top: 22px;
+        margin-bottom: 20px;
       }
 
       .hero-bio-short {
         font-size: 15px;
-        line-height: 1.8;
+        line-height: 1.72;
         max-width: 100%;
+        margin-bottom: 22px;
+      }
+
+      .hero-line {
+        margin-bottom: 22px;
+      }
+
+      .hero-brands {
+        gap: 12px;
+      }
+
+      .hero-brands-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+      }
+
+      .hero-brand-list {
+        gap: 8px;
+      }
+
+      .hero-brand {
+        min-height: 38px;
+        padding: 9px 12px;
+        font-size: 10px;
+        letter-spacing: 1.4px;
       }
 
       .hero-scroll {
@@ -931,6 +1016,36 @@
         margin-bottom: 4px;
       }
     }
+
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero-content {
+        bottom: 58px;
+      }
+
+      .hero-tag {
+        font-size: 9px;
+        letter-spacing: 3px;
+        max-width: 310px;
+      }
+
+      .hero-name {
+        font-size: clamp(58px, 20vw, 82px);
+        line-height: 0.9;
+      }
+
+      .hero-subtitle {
+        font-size: 9px;
+        letter-spacing: 1.8px;
+      }
+
+      .hero-bio-short {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body data-lang="ko">
@@ -942,12 +1057,10 @@
   </div>
 
   <nav>
-    <a class="nav-logo" href="#">VR</a>
     <ul class="nav-links">
       <li><a href="#profile" data-t="nav_profile">프로필</a></li>
       <li><a href="#credits" data-t="nav_credits">경력</a></li>
       <li><a href="#gallery" data-t="nav_gallery">갤러리</a></li>
-      <li><a href="#ai" data-t="nav_ai">AI 어시스턴트</a></li>
       <li><a href="#contact" data-t="nav_contact">연락처</a></li>
     </ul>
   </nav>
@@ -957,11 +1070,19 @@
     <img class="hero-img" src="./assets/hero_portrait_clean.png" alt="Valentin Rodin">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag" data-t="hero_tag">배우 · 모델 · 콘텐츠 크리에이터 — 서울, 한국</p>
+      <p class="hero-tag" data-t="hero_tag">배우 · 모델 · 콘텐츠 크리에이터</p>
       <h1 class="hero-name">Valentin<br><em>Rodin</em></h1>
-      <p class="hero-subtitle" data-t="hero_subtitle">배우 · 모델 · 콘텐츠 크리에이터</p>
+      <p class="hero-subtitle" data-t="hero_subtitle">Korea / Japan / China / Taiwan / Hong Kong</p>
       <div class="hero-line"></div>
-      <p class="hero-bio-short" data-t="hero_bio">러시아 출신의 국제 배우. 영국·러시아·중국·인도·태국을 거쳐 현재 서울에서 활동 중. SBS 드라마 《우주메리미》 출연, 중국 블록버스터 《유랑하는 지구》 마카로프 우주비행사 역.</p>
+      <p class="hero-bio-short" data-t="hero_bio">International actor, based in Seoul. Over a decade of on-set experience across UK, Russia, China, India, Thailand, and South Korea.</p>
+      <div class="hero-brands">
+        <span class="hero-brands-label" data-t="hero_brands_label">Worked with</span>
+        <div class="hero-brand-list">
+          <span class="hero-brand">Samsung</span>
+          <span class="hero-brand">Netflix</span>
+          <span class="hero-brand">MBC</span>
+        </div>
+      </div>
     </div>
     <div class="hero-scroll" data-t="scroll">Scroll</div>
   </section>
@@ -1186,9 +1307,10 @@
         nav_gallery: "Gallery",
         nav_ai: "AI Assistant",
         nav_contact: "Contact",
-        hero_tag: "Actor · Model · Content Creator — Seoul, Korea",
-        hero_subtitle: "Actor · Model · Content Creator",
-        hero_bio: "Russian-born international actor, based in Seoul. Over a decade of on-set experience across UK, Russia, China, India, Thailand, and South Korea.",
+        hero_tag: "Actor · Model · Content Creator",
+        hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
+        hero_bio: "International actor, based in Seoul. Over a decade of on-set experience across UK, Russia, China, India, Thailand, and South Korea.",
+        hero_brands_label: "Worked with",
         stat1_label: "Years in Asia",
         stat2_label: "Countries",
         stat3_label: "Languages",
@@ -1294,9 +1416,10 @@
         nav_gallery: "갤러리",
         nav_ai: "AI 어시스턴트",
         nav_contact: "연락처",
-        hero_tag: "배우 · 모델 · 콘텐츠 크리에이터 — 서울, 한국",
-        hero_subtitle: "배우 · 모델 · 콘텐츠 크리에이터",
-        hero_bio: "러시아 출신의 국제 배우. 영국·러시아·중국·인도·태국을 거쳐 현재 서울에서 활동 중. SBS 드라마 《우주메리미》 출연, 중국 블록버스터 《유랑하는 지구》 마카로프 우주비행사 역.",
+        hero_tag: "배우 · 모델 · 콘텐츠 크리에이터",
+        hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
+        hero_bio: "서울 기반의 국제 배우. 영국, 러시아, 중국, 인도, 태국, 한국에서 10년이 넘는 현장 경험을 쌓았습니다.",
+        hero_brands_label: "협업 이력",
         stat1_label: "아시아 경력",
         stat2_label: "활동 국가",
         stat3_label: "구사 언어",
@@ -1402,9 +1525,10 @@
         nav_gallery: "图库",
         nav_ai: "AI助手",
         nav_contact: "联系",
-        hero_tag: "演员 · 模特 · 内容创作者 — 首尔，韩国",
-        hero_subtitle: "演员 · 模特 · 内容创作者",
-        hero_bio: "俄罗斯籍国际演员，现居首尔。拥有英国、俄罗斯、中国、印度、泰国及韩国逾十年片场经验。主要作品包括《流浪地球》及SBS电视剧《宇宙嫁嫁嫁》。",
+        hero_tag: "演员 · 模特 · 内容创作者",
+        hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
+        hero_bio: "国际演员，现居首尔。拥有英国、俄罗斯、中国、印度、泰国及韩国十余年片场经验。",
+        hero_brands_label: "合作履历",
         stat1_label: "亚洲经验",
         stat2_label: "活动国家",
         stat3_label: "语言能力",
@@ -1510,9 +1634,10 @@
         nav_gallery: "ギャラリー",
         nav_ai: "AIアシスタント",
         nav_contact: "お問い合わせ",
-        hero_tag: "俳優 · モデル · コンテンツクリエイター — ソウル、韓国",
-        hero_subtitle: "俳優 · モデル · コンテンツクリエイター",
-        hero_bio: "ロシア出身の国際的俳優、ソウル在住。英国・ロシア・中国・インド・タイ・韓国で10年以上の撮影現場経験を持つ。",
+        hero_tag: "俳優 · モデル · コンテンツクリエイター",
+        hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
+        hero_bio: "国際俳優として現在ソウルを拠点に活動。英国・ロシア・中国・インド・タイ・韓国で10年以上の撮影現場経験があります。",
+        hero_brands_label: "主な実績",
         stat1_label: "アジア経歴",
         stat2_label: "活動国数",
         stat3_label: "対応言語",
