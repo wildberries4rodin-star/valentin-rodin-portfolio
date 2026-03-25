@@ -261,39 +261,77 @@
       animation: fadeUp 1s 1s both;
     }
 
-    .hero-brands {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      animation: fadeUp 1s 1.15s both;
+    .partner-strip {
+      position: relative;
+      z-index: 3;
+      margin: -1px 48px 0;
+      padding: 22px 28px;
+      border-top: 1px solid rgba(245, 243, 239, 0.08);
+      border-bottom: 1px solid rgba(245, 243, 239, 0.08);
+      background: linear-gradient(180deg, rgba(15, 15, 15, 0.94) 0%, rgba(10, 10, 10, 0.9) 100%);
     }
 
-    .hero-brands-label {
+    .partner-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .partner-strip-label {
       font-size: 10px;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: rgba(245, 243, 239, 0.42);
+      white-space: nowrap;
     }
 
-    .hero-brand-list {
+    .partner-logo-list {
       display: flex;
+      align-items: center;
+      justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
+      flex: 1;
     }
 
-    .hero-brand {
-      display: inline-flex;
+    .partner-logo-card {
+      display: flex;
       align-items: center;
-      min-height: 42px;
-      padding: 10px 16px;
-      border: 1px solid rgba(245, 243, 239, 0.12);
-      background: rgba(255, 255, 255, 0.03);
-      color: rgba(245, 243, 239, 0.82);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
+      justify-content: center;
+      min-height: 62px;
+      min-width: 154px;
+      padding: 16px 22px;
+      border: 1px solid rgba(245, 243, 239, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
       backdrop-filter: blur(12px);
+      color: rgba(245, 243, 239, 0.72);
+      transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .partner-logo-card:hover {
+      border-color: rgba(201, 168, 76, 0.22);
+      color: rgba(245, 243, 239, 0.88);
+      transform: translateY(-1px);
+    }
+
+    .partner-logo {
+      display: block;
+      width: auto;
+      height: 22px;
+      max-width: 100%;
+    }
+
+    .partner-logo--samsung {
+      height: 18px;
+    }
+
+    .partner-logo--netflix {
+      height: 20px;
+    }
+
+    .partner-logo--mbc {
+      height: 19px;
     }
 
     .hero-scroll {
@@ -961,24 +999,40 @@
         margin-bottom: 22px;
       }
 
-      .hero-brands {
-        gap: 12px;
+      .partner-strip {
+        margin: -1px 24px 0;
+        padding: 18px 18px;
       }
 
-      .hero-brands-label {
+      .partner-strip-inner {
+        gap: 16px;
+      }
+
+      .partner-strip-label {
         font-size: 9px;
         letter-spacing: 3px;
       }
 
-      .hero-brand-list {
-        gap: 8px;
+      .partner-logo-list {
+        gap: 10px;
       }
 
-      .hero-brand {
-        min-height: 38px;
-        padding: 9px 12px;
-        font-size: 10px;
-        letter-spacing: 1.4px;
+      .partner-logo-card {
+        min-height: 52px;
+        min-width: 120px;
+        padding: 12px 14px;
+      }
+
+      .partner-logo {
+        height: 18px;
+      }
+
+      .partner-logo--samsung {
+        height: 15px;
+      }
+
+      .partner-logo--mbc {
+        height: 16px;
       }
 
       .hero-scroll {
@@ -1090,6 +1144,42 @@
           linear-gradient(180deg, rgba(6, 6, 6, 0.12) 0%, rgba(6, 6, 6, 0.04) 16%, rgba(6, 6, 6, 0.08) 76%, rgba(6, 6, 6, 0.2) 100%),
           linear-gradient(90deg, rgba(6, 6, 6, 0.3) 0%, rgba(6, 6, 6, 0.08) 18%, rgba(6, 6, 6, 0) 42%, rgba(6, 6, 6, 0.08) 84%, rgba(6, 6, 6, 0.22) 100%);
       }
+
+      .partner-strip {
+        margin: -1px 16px 0;
+        padding: 16px 14px;
+      }
+
+      .partner-strip-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .partner-logo-list {
+        justify-content: flex-start;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .partner-logo-card {
+        flex: 1 1 98px;
+        min-width: 0;
+        min-height: 48px;
+        padding: 11px 12px;
+      }
+
+      .partner-logo {
+        height: 15px;
+      }
+
+      .partner-logo--samsung {
+        height: 13px;
+      }
+
+      .partner-logo--mbc {
+        height: 14px;
+      }
     }
   </style>
 </head>
@@ -1120,16 +1210,25 @@
       <p class="hero-subtitle" data-t="hero_subtitle">Korea / Japan / China / Taiwan / Hong Kong</p>
       <div class="hero-line"></div>
       <p class="hero-bio-short" data-t="hero_bio">International actor, based in Seoul. Over a decade of on-set experience across UK, Russia, China, India, Thailand, and South Korea.</p>
-      <div class="hero-brands">
-        <span class="hero-brands-label" data-t="hero_brands_label">Worked with</span>
-        <div class="hero-brand-list">
-          <span class="hero-brand">Samsung</span>
-          <span class="hero-brand">Netflix</span>
-          <span class="hero-brand">MBC</span>
-        </div>
-      </div>
     </div>
     <div class="hero-scroll" data-t="scroll">Scroll</div>
+  </section>
+
+  <section class="partner-strip fade-in" aria-label="Selected partners">
+    <div class="partner-strip-inner">
+      <span class="partner-strip-label" data-t="hero_brands_label">Selected partners</span>
+      <div class="partner-logo-list">
+        <span class="partner-logo-card" aria-label="Samsung">
+          <img class="partner-logo partner-logo--samsung" src="./assets/logos/samsung.svg" alt="Samsung logo">
+        </span>
+        <span class="partner-logo-card" aria-label="Netflix">
+          <img class="partner-logo partner-logo--netflix" src="./assets/logos/netflix.svg" alt="Netflix logo">
+        </span>
+        <span class="partner-logo-card" aria-label="MBC">
+          <img class="partner-logo partner-logo--mbc" src="./assets/logos/mbc.svg" alt="MBC logo">
+        </span>
+      </div>
+    </div>
   </section>
 
   <div class="stats-bar">
@@ -1355,7 +1454,7 @@
         hero_tag: "Actor · Model · Content Creator",
         hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
         hero_bio: "International actor, based in Seoul. Over a decade of on-set experience across UK, Russia, China, India, Thailand, and South Korea.",
-        hero_brands_label: "Worked with",
+        hero_brands_label: "Selected partners",
         stat1_label: "Years in Asia",
         stat2_label: "Countries",
         stat3_label: "Languages",
@@ -1464,7 +1563,7 @@
         hero_tag: "배우 · 모델 · 콘텐츠 크리에이터",
         hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
         hero_bio: "서울 기반의 국제 배우. 영국, 러시아, 중국, 인도, 태국, 한국에서 10년이 넘는 현장 경험을 쌓았습니다.",
-        hero_brands_label: "협업 이력",
+        hero_brands_label: "주요 파트너",
         stat1_label: "아시아 경력",
         stat2_label: "활동 국가",
         stat3_label: "구사 언어",
@@ -1573,7 +1672,7 @@
         hero_tag: "演员 · 模特 · 内容创作者",
         hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
         hero_bio: "国际演员，现居首尔。拥有英国、俄罗斯、中国、印度、泰国及韩国十余年片场经验。",
-        hero_brands_label: "合作履历",
+        hero_brands_label: "合作伙伴",
         stat1_label: "亚洲经验",
         stat2_label: "活动国家",
         stat3_label: "语言能力",
@@ -1682,7 +1781,7 @@
         hero_tag: "俳優 · モデル · コンテンツクリエイター",
         hero_subtitle: "Korea / Japan / China / Taiwan / Hong Kong",
         hero_bio: "国際俳優として現在ソウルを拠点に活動。英国・ロシア・中国・インド・タイ・韓国で10年以上の撮影現場経験があります。",
-        hero_brands_label: "主な実績",
+        hero_brands_label: "主要パートナー",
         stat1_label: "アジア経歴",
         stat2_label: "活動国数",
         stat3_label: "対応言語",
